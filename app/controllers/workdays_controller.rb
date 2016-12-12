@@ -1,6 +1,6 @@
 class WorkdaysController < ApplicationController
   layout 'pages'
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   before_action :set_workday, only: [:show, :edit, :update, :destroy]
 
   # GET /workdays
