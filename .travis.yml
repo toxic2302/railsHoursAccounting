@@ -1,9 +1,9 @@
 language: ruby
 rvm:
-  - 2.2
-  - jruby
-  - rbx-2
-  # uncomment and edit the following line if your project needs to run something other than `rake`:
+- 2.2.
+# uncomment and edit the following line if your project needs to run something other than `rake`:
+# script: bundle exec rspec spec
+script: bundle install
 script: bundle exec rspec spec/routing
 #script: bundle exec rspec spec/models
 #script: bundle exec rspec spec/controllers
