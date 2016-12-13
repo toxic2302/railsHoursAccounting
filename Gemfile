@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'twitter-bootstrap-rails'
 gem 'devise'
+gem 'chartkick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -40,6 +41,7 @@ group :development, :test do
   gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'rspec-rails', '~> 3.5'
   gem 'database_cleaner'
+  gem 'factory_girl'
 end
 
 group :development do
