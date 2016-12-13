@@ -39,7 +39,7 @@
   <div class="form-group">
     <%= f.label :company_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :company_id, :class => 'form-control' %>
+      <%= f.collection_select :company_id, current_user.companies.order(:title), :id, :title, include_blank: true, :class => 'form-control' %>
     </div>
     <%=f.error_span(:company_id) %>
   </div>

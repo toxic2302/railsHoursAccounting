@@ -41,7 +41,7 @@
     <div class="form-group">
       <%= f.label :company, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10">
-        <%= f.collection_select :company_id, Company.order(:title), :id, :title, include_blank: true, :class => 'form-control' %>
+        <%= f.collection_select :company_id, current_user.companies.order(:title), :id, :title, include_blank: true, :class => 'form-control' %>
       </div>
       <%= f.error_span(:company) %>
     </div>
@@ -49,7 +49,7 @@
     <div class="form-group">
       <%= f.label :project, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10">
-        <%= f.collection_select :project_id, Project.order(:title), :id, :title, include_blank: true, :class => 'form-control' %>
+        <%= f.collection_select :project_id, current_user.projects.order(:title), :id, :title, include_blank: true, :class => 'form-control' %>
       </div>
       <%= f.error_span(:project) %>
     </div>

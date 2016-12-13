@@ -6,7 +6,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = current_user.companies.all
   end
 
   # GET /companies/1
@@ -16,7 +16,8 @@ class CompaniesController < ApplicationController
 
   # GET /companies/new
   def new
-    @company = Company.new
+    @company = current_user.companies.new
+    #@company = Company.new
   end
 
   # GET /companies/1/edit
@@ -26,7 +27,8 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
-    @company = Company.new(company_params)
+    #@company = Company.new(company_params)
+    @company = current_user.companies.new(company_params)
 
     respond_to do |format|
       if @company.save
@@ -64,13 +66,13 @@ class CompaniesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_company
-      @company = Company.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_company
+    @company = Company.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def company_params
-      params.require(:company).permit(:title, :description).merge(user_id: current_user)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def company_params
+    params.require(:company).permit(:title, :description)
+  end
 end

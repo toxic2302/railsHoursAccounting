@@ -6,7 +6,8 @@ class WorkdaysController < ApplicationController
   # GET /workdays
   # GET /workdays.json
   def index
-    @workdays = Workday.all
+    #@workdays = Workday.all
+    @workdays = current_user.workdays.all
   end
 
   # GET /workdays/1
@@ -16,7 +17,8 @@ class WorkdaysController < ApplicationController
 
   # GET /workdays/new
   def new
-    @workday = Workday.new
+    #@workday = Workday.new
+    @workday = current_user.workdays.new
   end
 
   # GET /workdays/1/edit
@@ -26,7 +28,8 @@ class WorkdaysController < ApplicationController
   # POST /workdays
   # POST /workdays.json
   def create
-    @workday = Workday.new(workday_params)
+    #@workday = Workday.new(workday_params)
+    @workday = current_user.workdays.new(workday_params)
 
     respond_to do |format|
       if @workday.save

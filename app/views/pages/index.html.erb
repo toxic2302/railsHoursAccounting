@@ -1,9 +1,10 @@
 <h1>Your working stats</h1>
 
-<p>Workdays: <%= @workdays.count %></p>
-<p>Companies: <%= @companies.count %></p>
-<p>Projects: <%= @projects.count %></p>
-
-<%= @workdays.each do |workday| %>
-    <p>Hours: <%= TimeDifference.between(workday.start, workday.end).in_years %></p>
+<% if user_signed_in? %>
+    <p>Workdays: <%= @workdays.count %></p>
+    <p>Companies: <%= @companies.count %></p>
+    <p>Projects: <%= @projects.count %></p>
+<% else %>
+    <p>Please login to see your stats!</p>
 <% end %>
+
