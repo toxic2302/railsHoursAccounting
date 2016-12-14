@@ -14,6 +14,16 @@ engines:
       languages:
       - ruby
       - javascript
+      exclude_fingerprints:
+          - 972770387cafc4748f900e67f6cc2972
+          - c1922008b3cbde2481c1099da08fdeb8
+          - 0903882c8ed1729a072732e29bd89219
+          - 01da30bce967fc81969117a48e491853
+          - b3364179f2ffbc2fbf7905134a27f117
+          - ff8e732a733b78c13bddbc0cd571c5f3
+          - 9e8d0a0ac92cb9680e29ff30883d5ad3
+          - b929cfe7d24c72cba76fde15d30347b8
+          - 2fcff3fce7dacdedf30e4371f38e0376
   eslint:
     enabled: false
   fixme:

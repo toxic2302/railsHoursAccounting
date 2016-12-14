@@ -30,6 +30,8 @@ class WorkdaysController < ApplicationController
   def create
     #@workday = Workday.new(workday_params)
     @workday = current_user.workdays.new(workday_params)
+    @workday.workingHours = ((@workday.end - @workday.start) * 24 * 60 * 60).to_i
+    #@workday.workingHours = ((@workday.start - @workday.end) / 1.hour).round
 
     respond_to do |format|
       if @workday.save
@@ -74,6 +76,6 @@ class WorkdaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def workday_params
-      params.require(:workday).permit(:day, :start, :end, :company_id, :project_id)
+      params.require(:workday).permit(:day, :start, :end, :company_id, :project_id, :workingHours)
     end
 end
