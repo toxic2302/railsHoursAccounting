@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161211230810) do
+ActiveRecord::Schema.define(version: 20161214123223) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "title"
@@ -50,11 +50,12 @@ ActiveRecord::Schema.define(version: 20161211230810) do
     t.date     "day"
     t.time     "start"
     t.time     "end"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "company_id"
     t.integer  "user_id"
     t.integer  "project_id"
+    t.integer  "workingHours", limit: 8
   end
 
 end

@@ -8,3 +8,6 @@ script:
 - bundle exec rspec spec/routing
 #script: bundle exec rspec spec/models
 #script: bundle exec rspec spec/controllers
+addons:
+    code_climate:
+        repo_token: c3238a24f5ab046dae41cd6801ea05f88382cdfaecd3e5dca6a3b4fcd45240c9
