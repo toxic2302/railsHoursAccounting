@@ -8,6 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:user) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -18,6 +19,7 @@
         <td><%= link_to company.id, company_path(company) %></td>
         <td><%= company.title %></td>
         <td><%= company.description %></td>
+        <td><%= company.user.email %></td>
         <td><%=l company.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

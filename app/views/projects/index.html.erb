@@ -20,8 +20,8 @@
         <td><%= link_to project.id, project_path(project) %></td>
         <td><%= project.title %></td>
         <td><%= project.description %></td>
-        <td><%= project.user_id %></td>
-        <td><%= project.company_id %></td>
+        <td><%= project.user.email %></td>
+        <td><%= project.company.title %></td>
         <td><%=l project.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
