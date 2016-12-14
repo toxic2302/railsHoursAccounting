@@ -23,7 +23,11 @@
         <td><%= workday.start.to_s(:time) %></td>
         <td><%= workday.end.to_s(:time) %></td>
         <td><%= workday.company.title %></td>
-        <td><%= workday.project.title %></td>
+        <% if workday.project.present? %>
+            <td><%= workday.project.title %></td>
+        <% else %>
+            <td></td>
+        <% end %>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_workday_path(workday), :class => 'btn btn-default btn-xs' %>
