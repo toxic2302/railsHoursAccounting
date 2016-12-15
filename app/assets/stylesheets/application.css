@@ -14,6 +14,13 @@
  *= require_self
  */
 /* User sign in and sign forms. */
+.set-background {
+    background: url(jlwvautloaq-dustin-lee.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .border-form-div {
     max-width: 300px;
     padding: 19px 29px 29px;
