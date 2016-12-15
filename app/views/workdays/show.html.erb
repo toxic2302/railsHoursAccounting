@@ -7,9 +7,17 @@
   <dt><strong><%= model_class.human_attribute_name(:day) %>:</strong></dt>
   <dd><%= @workday.day %></dd>
   <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
-  <dd><%= @workday.start %></dd>
+  <dd><%= @workday.start.to_s(:time) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:end) %>:</strong></dt>
-  <dd><%= @workday.end %></dd>
+  <dd><%= @workday.end.to_s(:time) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:company) %>:</strong></dt>
+  <dd><%= @workday.company.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:project) %>:</strong></dt>
+  <% if @workday.project.present? %>
+      <dd><%= @workday.project.title %></dd>
+  <% else %>
+      <dd></dd>
+  <% end %>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
