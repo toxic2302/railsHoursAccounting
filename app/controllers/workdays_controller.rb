@@ -1,13 +1,13 @@
 class WorkdaysController < ApplicationController
   layout 'pages'
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_workday, only: [:show, :edit, :update, :destroy]
 
   # GET /workdays
   # GET /workdays.json
   def index
-    #@workdays = Workday.all
     @workdays = current_user.workdays.all
+    @workday_months = @workdays.group_by { |t| t.day.beginning_of_month }
   end
 
   # GET /workdays/1
@@ -17,7 +17,6 @@ class WorkdaysController < ApplicationController
 
   # GET /workdays/new
   def new
-    #@workday = Workday.new
     @workday = current_user.workdays.new
   end
 
@@ -28,10 +27,8 @@ class WorkdaysController < ApplicationController
   # POST /workdays
   # POST /workdays.json
   def create
-    #@workday = Workday.new(workday_params)
     @workday = current_user.workdays.new(workday_params)
     @workday.workingHours = ((@workday.end - @workday.start) * 24 * 60 * 60).to_i
-    #@workday.workingHours = ((@workday.start - @workday.end) / 1.hour).round
 
     respond_to do |format|
       if @workday.save

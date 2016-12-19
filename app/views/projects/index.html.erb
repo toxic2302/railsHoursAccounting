@@ -26,7 +26,7 @@
         <% else %>
             <td></td>
         <% end %>
-        <td><%= l project.created_at %></td>
+        <td><%= project.created_at.strftime('%d.%m.%Y') %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_path(project), :class => 'btn btn-default btn-xs' %>

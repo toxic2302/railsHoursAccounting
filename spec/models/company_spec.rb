@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Company, type: :model do
+  it { expect(build :company).to be_valid}
 
   let (:company) { build :company }
+  let (:createdCompany) { create :company}
+
+  #let (:company) { build :company }
 
   describe 'associations' do
     it 'has many workdays' do
@@ -32,6 +36,8 @@ RSpec.describe Company, type: :model do
   end
 
   describe 'crud' do
-
+    it 'create' do
+      expect(createdCompany).to change{ Company.count }.from(0).to(1)
+    end
   end
 end

@@ -2,6 +2,8 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+<% @workday_months.sort.each do |month, workdays| %>
+    <h2><%= month.strftime('%B') %></h2>
 <table class="table table-striped">
   <thead>
     <tr class="success">
@@ -17,10 +19,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @workdays.each do |workday| %>
+  <% for workday in workdays %>
       <tr>
         <td><%= link_to workday.id, workday_path(workday) %></td>
-        <td><%= workday.day %></td>
+        <td><%= workday.day.strftime('%d.%m.%Y') %></td>
         <td><%= workday.start.to_s(:time) %></td>
         <td><%= workday.end.to_s(:time) %></td>
         <td><%= workday.company.title %></td>
@@ -29,7 +31,7 @@
         <% else %>
             <td></td>
         <% end %>
-        <td><%= distance_of_time_in_words workday.start, workday.end %></td>
+        <td><%= Time.at(get_working_hours(workday)).utc.strftime('%H:%M') %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_workday_path(workday), :class => 'btn btn-default btn-xs' %>
@@ -43,6 +45,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_workday_path,
