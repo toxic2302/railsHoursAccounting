@@ -3,9 +3,7 @@
 <h1 class="text-center">Your working stats</h1>
 
 <% if user_signed_in? %>
-    <p class="text-center">Workdays: <%= @workdays.count %></p>
-    <p class="text-center">Companies: <%= @companies.count %></p>
-    <p class="text-center">Projects: <%= @projects.count %></p>
+    <%= statistics %>
 <% else %>
     <p class="text-center">Please login to see your stats!</p>
 <% end %>

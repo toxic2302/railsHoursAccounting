@@ -20,7 +20,7 @@
         <td><%= company.title %></td>
         <td><%= company.description %></td>
         <td><%= company.user.email %></td>
-        <td><%=l company.created_at %></td>
+        <td><%= company.created_at.strftime('%d.%m.%Y') %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_company_path(company), :class => 'btn btn-default btn-xs' %>
