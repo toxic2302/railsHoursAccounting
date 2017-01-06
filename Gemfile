@@ -36,6 +36,7 @@ gem 'devise'
 gem 'chartkick'
 gem 'prawn'
 gem 'prawn-table'
+gem 'newrelic_rpm'
 
 gem 'rails_12factor', group: :production
 
