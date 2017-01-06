@@ -8,11 +8,30 @@ class WorkdaysController < ApplicationController
   def index
     @workdays = current_user.workdays.all
     @workday_months = @workdays.group_by { |t| t.day.beginning_of_month }
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = WorkdaysPdf.new(@workdays, current_user, view_context, @workday_months)
+        send_data pdf.render, filename: "workdays.pdf",
+                  type: "application/pdf",
+                  disposition: "inline"
+      end
+    end
   end
 
   # GET /workdays/1
   # GET /workdays/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = WorkdayPdf.new(@workday)
+        send_data pdf.render, filename: "workday_#{@workday.id}.pdf",
+                  type: "application/pdf",
+                  disposition: "inline"
+      end
+    end
   end
 
   # GET /workdays/new
@@ -66,13 +85,13 @@ class WorkdaysController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_workday
-      @workday = Workday.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_workday
+    @workday = Workday.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def workday_params
-      params.require(:workday).permit(:day, :start, :end, :company_id, :project_id, :workingHours)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def workday_params
+    params.require(:workday).permit(:day, :start, :end, :company_id, :project_id, :workingHours)
+  end
 end
