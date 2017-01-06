@@ -37,6 +37,7 @@ gem 'chartkick'
 gem 'prawn'
 gem 'prawn-table'
 gem 'newrelic_rpm'
+gem 'sendgrid-ruby'
 
 gem 'rails_12factor', group: :production
 
