@@ -13,7 +13,7 @@ class WorkdaysPdf < Prawn::Document
   end
 
   def set_image
-    image "#{Rails.root}/app/assets/images/logo_sek_mi.png", :position => :right, :scale => 0.8
+    image "public/uploads/company/logo/1/logo_sek_mi.png", :position => :right, :scale => 0.8
   end
 
   def set_address

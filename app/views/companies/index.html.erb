@@ -6,6 +6,7 @@
   <thead>
     <tr class="success">
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:logo) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:user) %></th>
@@ -17,6 +18,11 @@
     <% @companies.each do |company| %>
       <tr>
         <td><%= link_to company.id, company_path(company) %></td>
+        <% if company.logo.url.present? %>
+        <td><%= image_tag(company.logo.thumb.url) %></td>
+            <% else %>
+            <td></td>
+            <% end %>
         <td><%= company.title %></td>
         <td><%= company.description %></td>
         <td><%= company.user.email %></td>
