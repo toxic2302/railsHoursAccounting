@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -38,6 +38,8 @@ gem 'prawn'
 gem 'prawn-table'
 gem 'newrelic_rpm'
 gem 'sendgrid-ruby'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 
 gem 'rails_12factor', group: :production
 
