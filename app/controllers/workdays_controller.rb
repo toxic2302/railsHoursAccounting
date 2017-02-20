@@ -64,6 +64,7 @@ class WorkdaysController < ApplicationController
   # PATCH/PUT /workdays/1.json
   def update
     respond_to do |format|
+      @workday.workingHours = ((@workday.end - @workday.start) * 24 * 60 * 60).to_i
       if @workday.update(workday_params)
         format.html { redirect_to @workday, notice: 'Workday was successfully updated.' }
         format.json { render :show, status: :ok, location: @workday }

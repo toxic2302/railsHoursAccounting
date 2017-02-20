@@ -6,6 +6,8 @@ class WorkdaysPdf < Prawn::Document
     @user = current_user
     @view = view
     @workday_months = workday_months
+    #@company_id = company_id
+    #@selected_month = selected_month
     set_address
     set_image
     set_header
@@ -13,11 +15,13 @@ class WorkdaysPdf < Prawn::Document
   end
 
   def set_image
-    image "public/uploads/company/logo/1/logo_sek_mi.png", :position => :right, :scale => 0.8
+    image "public/uploads/company/logo/1/logo_sek_mi.png", :position => :right, :scale => 0.6
   end
 
   def set_address
+    text "Name: #{@user.firstname} #{@user.lastname}", :text => :bold
     text "Email: #{@user.email}", :text => :bold
+    text "Abteilung:", :text => :bold
   end
 
   def set_header

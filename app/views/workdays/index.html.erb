@@ -2,7 +2,9 @@
 <div class="page-header">
   <h1><%= t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+
 <p><%= link_to "Printable Workdays (PDF)", workdays_path(@workdays, format: "pdf"), :target => 'blank' %></p>
+
 <% @workday_months.sort.each do |month, workdays| %>
     <h2><%= month.strftime('%B') %></h2>
     <table class="table table-striped">
