@@ -5,6 +5,8 @@
 [![Test Coverage](https://codeclimate.com/github/toxic2302/railsHoursAccounting/badges/coverage.svg)](https://codeclimate.com/github/toxic2302/railsHoursAccounting/coverage)
 ###### This project is perfect for freelancers or anybody that track his working hours.
 
+Website: https://railsaccounting.herokuapp.com
+
 ---
 
 Features:
