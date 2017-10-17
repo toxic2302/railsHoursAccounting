@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 ruby '2.3.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '>= 5.0.0.1', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
-gem 'pg', '0.19.0', group: :production
+gem 'pg', '= 0.19.0', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -46,7 +46,7 @@ gem 'rails_12factor', group: :production
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'simplecov'
+  gem 'simplecov', '>= 0'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'rspec-rails', '~> 3.5'
   gem 'database_cleaner'
