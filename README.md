@@ -3,6 +3,7 @@
 [![Dependency Status](https://gemnasium.com/badges/github.com/toxic2302/railsHoursAccounting.svg)](https://gemnasium.com/github.com/toxic2302/railsHoursAccounting)
 [![Code Climate](https://codeclimate.com/github/toxic2302/railsHoursAccounting/badges/gpa.svg)](https://codeclimate.com/github/toxic2302/railsHoursAccounting)
 [![Test Coverage](https://codeclimate.com/github/toxic2302/railsHoursAccounting/badges/coverage.svg)](https://codeclimate.com/github/toxic2302/railsHoursAccounting/coverage)
+![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)
 ###### This project is perfect for freelancers or anybody that track his working hours.
 
 Website: https://railsaccounting.herokuapp.com
