@@ -4,7 +4,9 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dd><%= image_tag(@company.logo.url) %></dd>
+  <% unless @company.logo.large.url.nil? %>
+      <dd><%= image_tag(@company.logo.large.url) %></dd>
+  <% end %>
   <br/>
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @company.title %></dd>
