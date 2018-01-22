@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.1', '~> 5.0.0'
+gem 'rails', '~> 5.1', '>= 5.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 gem 'pg', '= 0.19.0', group: :production
@@ -50,7 +50,7 @@ group :development, :test do
   gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'rspec-rails', '~> 3.5'
   gem 'database_cleaner'
-  gem 'factory_girl'
+  gem 'factory_bot'
 end
 
 group :development do
