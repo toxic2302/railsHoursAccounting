@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :workday, class: Workday do
     #day Date.now
     #start Time.now
