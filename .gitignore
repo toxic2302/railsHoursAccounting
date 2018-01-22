@@ -42,3 +42,5 @@ bower.json
 
 #IntelliJ
 .idea/*
+
+public/*
