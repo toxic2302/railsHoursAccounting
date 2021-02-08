@@ -38,7 +38,7 @@ gem 'prawn'
 gem 'prawn-table'
 gem 'newrelic_rpm'
 gem 'sendgrid-ruby'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick'
 
 gem 'rails_12factor', group: :production
